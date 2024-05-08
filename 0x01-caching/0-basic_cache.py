@@ -9,8 +9,8 @@ class BasicCache(BaseCaching):
     """
     Defines a class for caching information in key-value pairs
     Methods:
-        put(key, item) - store a key-value pair in the cache
-        get(key) - retrieve the value associated with a given key from the cache
+        put(key, item)- store a key-value pair in the cache
+        get(key)- retrieve the value associated with a given key
     """
 
     def __init__(self):
