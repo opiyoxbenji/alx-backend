@@ -8,7 +8,6 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """
     Defines a class for caching information in key-value pairs
-    
     Methods:
         put(key, item) - store a key-value pair in the cache
         get(key) - retrieve the value associated with a given key from the cache
@@ -23,7 +22,6 @@ class BasicCache(BaseCaching):
     def put(self, key, item):
         """
         Store a key-value pair in the cache
-
         Args:
             Key: The key for the item to be stored
             Item: The value to be stored
