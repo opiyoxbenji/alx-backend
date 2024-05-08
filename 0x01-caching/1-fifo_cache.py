@@ -12,7 +12,8 @@ class FIFOCache(BaseCaching):
 
     def __init__(self):
         """
-        Initializes the FIFOCache object by calling the parent class constructor and setting up FIFO order
+        Initializes the FIFOCache object by calling the parent class
+        constructor and setting up FIFO order
         """
         super().__init__()
         self.order = []
@@ -41,7 +42,8 @@ class FIFOCache(BaseCaching):
         Args:
             key: The key whose associated value is to be retrieved
         Returns:
-            The value associated with the given key, or None if the key is None or doesn't exist in the cache
+            The value associated with the given key, or 
+            None if the key is None or doesn't exist in the cache
         """
         if key is not None and key in self.cache_data.keys():
             return self.cache_data[key]
