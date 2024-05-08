@@ -2,10 +2,10 @@
 """
 Task 0 - Caching system
 """
-from base_caching import BaseCatching
+from base_caching import BaseCaching
 
 
-class BasicCache(BasicCaching):
+class BasicCache(BaseCaching):
     """
     Defines a class for caching information in key-value pairs
     
