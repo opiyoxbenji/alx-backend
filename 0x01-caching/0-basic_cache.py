@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""
-Task 0 - Caching system
+""" BaseCaching module
 """
 from base_caching import BaseCaching
 
@@ -8,10 +7,9 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """
     Defines a class for caching information in key-value pairs
-    
     Methods:
-        put(key, item) - store a key-value pair in the cache
-        get(key) - retrieve the value associated with a given key from the cache
+        put(key, item) - store a key-value pair
+        get(key) - retrieve the value associated with a key
     """
 
     def __init__(self):
@@ -22,11 +20,10 @@ class BasicCache(BaseCaching):
 
     def put(self, key, item):
         """
-        Store a key-value pair in the cache
-
+        Store a key-value pair
         Args:
-            Key: The key for the item to be stored
-            Item: The value to be stored
+            Key
+            Item
         """
         if key is None or item is None:
             pass
@@ -40,4 +37,4 @@ class BasicCache(BaseCaching):
         """
         if key is not None and key in self.cache_data.keys():
             return self.cache_data[key]
-        return None 
+        return None
