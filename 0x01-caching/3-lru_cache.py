@@ -7,11 +7,11 @@ from base_caching import BaseCaching
 
 class LRUCache(BaseCaching):
     """
-    Defines a FIFO caching system
+    Defines a LRU caching system
     """
     def __init__(self):
         """
-        Initializes with parent's constructor and sets up LIFO order
+        Initializes with parent's constructor and sets up LRU order
         """
         super().__init__()
         self.usage = []
