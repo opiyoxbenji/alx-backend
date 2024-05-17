@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-task 1 - basic babel setup
+task 2 - get locale from request
 """
 
 from flask import Flask, render_template, request
@@ -12,7 +12,7 @@ babel = Babel(app)
 
 class Config:
     """
-    class config
+    config class
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -22,12 +22,20 @@ class Config:
 app.config.from_object(Config)
 
 
+@babel.localeselector
+def get_locale():
+    """
+    get_locale
+    """
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+
 @app.route('/', methods=["GET"], strict_slashes=False)
 def hello():
     """
     hello world
     """
-    return render_template('1-index.html')
+    return render_template('2-index.html')
 
 
 if __name__ == "__main__":
