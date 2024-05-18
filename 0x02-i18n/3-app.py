@@ -1,38 +1,43 @@
 #!/usr/bin/env python3
 """
-Task 3 - Parametrize templates
+script for task 0
 """
-
-
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
-class Config:
+app = Flask(__name__)
+babel = Babel(app)
+
+
+class Config(object):
     """
-    l18n class config
+    conbfiguratio nclass for html
     """
-    LANGUAGES = ["en", "fr"]
+    LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
-app = Flask(__name__)
-app.config.from_object("1-app.Config")
-babel = Babel(app)
+app.config.from_object(Config)
 
 
-@app.route("/")
-def hello_world():
+@app.route('/')
+def indexing():
     """
-    handles default route
+    index route and func
     """
-    return render_template("3-index.html")
+    return render_template('3-index.html')
 
 
 @babel.localeselector
 def get_locale():
     """
-    Gets the best matching language for user
+    determines best locale with match
     """
-    return request.accept_languages.best_match(Config.LANGUAGES)
+    res = request.accept_languages.best_match(app.config['LANGUAGES'])
+    return res
+
+
+if __name__ == '__main__':
+    app.run()
