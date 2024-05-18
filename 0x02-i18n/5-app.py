@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-script for task 0
+Task 5 - Mock logging in
 """
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
@@ -20,7 +20,7 @@ users = {
 
 class Config(object):
     """
-    conbfiguratio nclass for html
+    HTML class configuration
     """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
@@ -33,7 +33,7 @@ app.config.from_object(Config)
 @app.route('/')
 def indexing():
     """
-    index route and func
+    Route handler for 'Hello World'
     """
     return render_template('5-index.html')
 
@@ -41,7 +41,7 @@ def indexing():
 @babel.localeselector
 def get_locale():
     """
-    determines best locale with match
+    Picks the best locale that aligns with the match
     """
     la = request.args.get('locale')
     langua = app.config['LANGUAGES']
@@ -54,7 +54,7 @@ def get_locale():
 
 def get_user():
     """
-    returns all the users
+    Fetches all users
     """
     log = request.args.get('login_as')
     if log:
@@ -66,7 +66,7 @@ def get_user():
 @app.before_request
 def before_request():
     """
-    used as a decorator
+    Applied as a decorator
     """
     g.user = get_user()
 

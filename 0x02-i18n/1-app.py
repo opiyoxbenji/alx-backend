@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-script for task 0
+Task 1 - Basic Babel setup
 """
 from flask import Flask, render_template
 from flask_babel import Babel
@@ -12,7 +12,7 @@ babel = Babel(app)
 
 class Config(object):
     """
-    conbfiguratio nclass for html
+    HTML class config
     """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
@@ -25,7 +25,7 @@ app.config.from_object(Config)
 @app.route('/')
 def indexing():
     """
-    index route and func
+    Route to hello world
     """
     return render_template('1-index.html')
 
